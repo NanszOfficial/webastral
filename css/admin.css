@@ -1,0 +1,686 @@
+.admin-dashboard {
+    padding: 2rem 5%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    padding: 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 3px solid var(--primary);
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.stat-info {
+    flex: 1;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* Admin Main */
+.admin-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    height: calc(100vh - 250px);
+}
+
+/* Chat Side */
+.admin-chat {
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    border: 3px solid var(--primary);
+}
+
+.chat-sidebar {
+    width: 300px;
+    background: #f8f0ff;
+    border-right: 2px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-sidebar-header {
+    padding: 1rem;
+    border-bottom: 2px solid var(--primary);
+}
+
+.chat-sidebar-header h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.chat-search {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid var(--primary-soft);
+    border-radius: 25px;
+    outline: none;
+}
+
+.chat-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem;
+}
+
+.chat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 0.3rem;
+    border: 2px solid transparent;
+}
+
+.chat-item:hover {
+    background: white;
+    border-color: var(--primary);
+}
+
+.chat-item.active {
+    background: var(--gradient);
+    color: white;
+}
+
+.chat-item.active .chat-item-name {
+    color: white;
+}
+
+.chat-item-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+}
+
+.chat-item-info {
+    flex: 1;
+}
+
+.chat-item-name {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.chat-item-last {
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+.chat-item-badge {
+    background: var(--primary);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+}
+
+/* Chat Area */
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #f9f9f9;
+}
+
+.chat-placeholder {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    gap: 1rem;
+}
+
+.chat-placeholder i {
+    font-size: 4rem;
+    color: var(--primary-soft);
+}
+
+.chat-area-header {
+    padding: 1rem;
+    background: white;
+    border-bottom: 2px solid var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chat-user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+}
+
+.chat-user-status {
+    font-size: 0.8rem;
+    color: #4caf50;
+}
+
+.chat-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chat-action-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    background: white;
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.chat-action-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.chat-action-btn.blocked {
+    background: #ff4444;
+    border-color: #ff4444;
+    color: white;
+}
+
+.chat-messages-area {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Management Side */
+.admin-management {
+    border-radius: 20px;
+    padding: 1rem;
+    border: 3px solid var(--primary);
+    overflow-y: auto;
+}
+
+.management-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-soft);
+    padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    background: none;
+    color: #666;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.tab-btn.active {
+    background: var(--gradient);
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Items Grid */
+.items-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.add-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    transform: rotate(90deg);
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 0.5rem;
+}
+
+.admin-item-card {
+    background: white;
+    border-radius: 10px;
+    padding: 0.8rem;
+    border: 2px solid var(--primary);
+    text-align: center;
+}
+
+.admin-item-card img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.admin-item-card h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.admin-item-price {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.admin-item-stock {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0.3rem 0;
+}
+
+.admin-item-actions {
+    display: flex;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+.edit-stock-btn, .sold-btn, .delete-btn {
+    flex: 1;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    transition: all 0.3s ease;
+}
+
+.edit-stock-btn {
+    background: #ffd700;
+    color: #333;
+}
+
+.sold-btn {
+    background: #4caf50;
+    color: white;
+}
+
+.delete-btn {
+    background: #ff4444;
+    color: white;
+}
+
+.edit-stock-btn:hover, .sold-btn:hover, .delete-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Transactions List */
+.transactions-list, .blocked-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.transaction-item {
+    background: white;
+    border-radius: 10px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border: 2px solid var(--primary-soft);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transaction-info {
+    flex: 1;
+}
+
+.transaction-item-name {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.transaction-details {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.transaction-price {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.blocked-item {
+    background: #ffeeee;
+    border-radius: 10px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border: 2px solid #ff4444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.unblock-btn {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ==================== FORM STYLES ==================== */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+/* ==================== IMAGE UPLOAD ==================== */
+.image-upload-container {
+    background: #f8f0ff;
+    border: 2px dashed var(--primary);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.image-preview {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 2px solid var(--primary);
+}
+
+.image-upload-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.url-input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 2px solid var(--primary-soft);
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.url-input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.upload-divider {
+    text-align: center;
+    color: #666;
+    font-size: 0.8rem;
+    position: relative;
+}
+
+.upload-divider::before,
+.upload-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background: #ddd;
+}
+
+.upload-divider::before {
+    left: 0;
+}
+
+.upload-divider::after {
+    right: 0;
+}
+
+.file-input {
+    display: none;
+}
+
+.upload-btn {
+    background: var(--gradient);
+    color: white;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.upload-btn i {
+    margin-right: 0.3rem;
+}
+
+/* ==================== ITEM CARD UPDATE ==================== */
+.admin-item-card {
+    background: white;
+    border-radius: 10px;
+    padding: 0.8rem;
+    border: 2px solid var(--primary);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.admin-item-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.admin-item-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    border: 2px solid var(--primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admin-item-card img:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+.admin-item-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+.admin-item-price {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0.3rem 0;
+}
+
+.admin-item-stock {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0.3rem 0;
+}
+
+.admin-item-actions {
+    display: flex;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+.edit-stock-btn, .sold-btn, .delete-btn, .edit-full-btn {
+    flex: 1;
+    padding: 0.4rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.edit-stock-btn {
+    background: #ffd700;
+    color: #333;
+}
+
+.edit-full-btn {
+    background: #6c5ce7;
+    color: white;
+}
+
+.sold-btn {
+    background: #4caf50;
+    color: white;
+}
+
+.delete-btn {
+    background: #ff4444;
+    color: white;
+}
+
+.edit-stock-btn:hover, .edit-full-btn:hover, .sold-btn:hover, .delete-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Image Preview in Modal */
+.modal-content h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.modal-content h3 i {
+    font-size: 1.3rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .admin-main {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .admin-chat {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-chat {
+        flex-direction: column;
+    }
+    
+    .chat-sidebar {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chat-actions {
+        flex-wrap: wrap;
+    }
+}

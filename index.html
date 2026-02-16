@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>FF Shop & Chat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-circle circle-1"></div>
+        <div class="gradient-circle circle-2"></div>
+        <div class="gradient-circle circle-3"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar glass-morphism" id="navbar">
+        <div class="nav-left">
+            <img src="" alt="Logo" class="logo" id="storeLogo">
+            <span class="site-name" id="storeName">AstralShop Id</span>
+        </div>
+        <div class="nav-right" id="navRight"></div>
+        
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="#" class="mobile-nav-link">Home</a>
+            <a href="#" class="mobile-nav-link">Cek Pesanan</a>
+            <div class="mobile-user-info" id="mobileUserInfo"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container" id="mainContainer" style="display: none;">
+        <!-- Left Side - Chat -->
+        <div class="chat-section glass-morphism">
+            <div class="chat-header">
+                <h2><i class="fas fa-comments"></i> <span id="chatHeaderTitle">Chat</span></h2>
+                <div class="chat-status" id="chatStatus">
+                    <span class="status-dot"></span>
+                    <span id="timeDisplay">--:-- --</span>
+                </div>
+            </div>
+            
+            <!-- Chat Container -->
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="loading">
+                        <div class="spinner-small"></div>
+                        <span>Loading messages...</span>
+                    </div>
+                </div>
+                
+                <div class="chat-input-area glass-morphism" id="chatInputArea" style="display: none;">
+                    <input type="text" id="chatInput" placeholder="Ketik pesan..." autocomplete="off">
+                    <button onclick="sendMessage()" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Shop -->
+        <div class="shop-section glass-morphism">
+            <h2><i class="fas fa-store"></i> Akun FF Tersedia</h2>
+            <div class="shop-items" id="shopItems">
+                <div class="loading">
+                    <div class="spinner-small"></div>
+                    <span>Loading items...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content glass-morphism">
+            <div class="login-header">
+                <div class="logo-circle pulse-animation">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <h2 id="welcomeText">Selamat Datang di FF Shop</h2>
+                <p class="typing-animation">Login dengan Google untuk mulai berbelanja</p>
+            </div>
+            
+            <div class="login-buttons">
+                <button onclick="loginWithGoogle()" class="google-btn glow-effect">
+                    <i class="fab fa-google"></i>
+                    <span>Login dengan Google</span>
+                </button>
+            </div>
+            
+            <div class="login-footer">
+                <p><i class="fas fa-shield-alt"></i> Aman & Terpercaya</p>
+                <p class="small">Data Anda dilindungi oleh Google</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p class="fade-in">Loading...</p>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+.config-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 30px;
+    border: 4px solid var(--primary);
+}
+
+.config-container h2 {
+    color: var(--primary);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.config-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input, .form-group textarea {
+    padding: 0.8rem;
+    border: 2px solid var(--primary-soft);
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--primary);
+}
+
+.help-text {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.logo-preview {
+    margin-top: 0.5rem;
+}
+
+.logo-preview img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    object-fit: cover;
+}
